@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build:styles": "sass src/styles/styles.scss dist/styles.css",
+    "clean": "rm -rf ./dist",
+    "copy:html": "cp index.html ./dist/index.html",
+    "copy:scripts": "cp -r ./src/scripts ./dist/scripts",
+    "build": "npm-run-all clean build:styles copy:*"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
     "jest": "^27.5.1",
     "npm-run-all": "^4.1.5",
     "sass": "^1.49.9"
