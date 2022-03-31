@@ -40,6 +40,10 @@ module.exports = (env, argv) => {
       }),
       new CleanWebpackPlugin(),
     ],
+    devServer: {
+      port: 9000,
+      hot: true,
+    },
   };
 
   if (isProduction) {
